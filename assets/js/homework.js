@@ -64,8 +64,7 @@ console.log(wordNew);
  */
 
 let email = prompt('Correo Electronico')
-emailMask = ''
-let j
+let emailMask = '', j
 for (let i = 0; i < email.length; i++) {
   if (email[i] == '@') {
     j = email.slice(0, i).length
