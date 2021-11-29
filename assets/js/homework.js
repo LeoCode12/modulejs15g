@@ -18,14 +18,14 @@
  * hint: https://www.w3schools.com/jsref/jsref_length_string.asp
 */
 
-// var wordUser = prompt('dame una palabra')
-// var wordReverse = ''
-// let j = wordUser.length-1 // 4 - 1 = 3
-// for (let i = 0; i < wordUser.length; i++) {
-//   wordReverse += wordUser[j].toLowerCase()
-//   j--
-// }
-// console.log(wordReverse);
+var wordUser = prompt('dame una palabra')
+var wordReverse = ''
+let j = wordUser.length-1 // 4 - 1 = 3
+for (let i = 0; i < wordUser.length; i++) {
+  wordReverse += wordUser[j].toLowerCase()
+  j--
+}
+console.log(wordReverse);
 
 /**
  *  word= H o l a     wordReverse = a l o H
@@ -42,15 +42,15 @@
  * hint: https://www.w3schools.com/jsref/jsref_replace.asp
  */
 
-// let wordNew = ''
-// for (let i = 0; i < wordUser.length; i++) {
+let wordNew = ''
+for (let i = 0; i < wordUser.length; i++) {
   
-//   if (wordUser[i] === ' ') {
-//     wordNew += "-"
-//   }
-//   wordNew += wordUser[i].trim()
-// }
-// console.log(wordNew);
+  if (wordUser[i] === ' ') {
+    wordNew += "-"
+  }
+  wordNew += wordUser[i].trim()
+}
+console.log(wordNew);
 
 /**
  * Ejercicio 4
