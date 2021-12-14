@@ -1,56 +1,84 @@
-// Exercises
+/**Selecionar Elementos
+ * 1. Seleccion por ID
+ */
+
+// 1. Seleccion por ID
+document.getElementById('head__title')
+document.getElementsByTagName('li')
+document.getElementsByClassName('link__menu')
+
+document.querySelector('#head__title')
+document.querySelector('li')
+document.querySelector('.link__menu') //Solo devuelve el primero
+document.querySelectorAll('.link__menu')
+
+/**
+ * Obtener Atributos
+ * Setear Atributos
+ */
+
+//get
+let title = document.querySelector('#head__title').getAttribute('data-title')
+console.log(title);
+let level = document.querySelector('#head__title').getAttribute('data-level')
+console.log(level);
+
+//set
+document.querySelector('#head__title').setAttribute('data-custom', 'random')
+// document.querySelector('#head__title').setAttribute('class', 'tres cuatro')
+
+//Agregar Clases
+document.querySelector('#head__title').classList.add('clase4')
+//remover clases
+document.querySelector('#head__title').classList.remove('clase1')
+
+//Comprobar si exosten los atributos
+document.querySelector('#head__title').hasAttribute('class')
+
+/**Seleccionar padres e hijos */
+
+/** Manipulacion del DOM */
+
+// let ulElement = document.createElement('ul')
+
+// let liFirst = document.createElement('li')
+// liFirst.textContent = 'item 1'
+// ulElement.appendChild(liFirst)
+
+// let liSecond = document.createElement('li')
+// liSecond.textContent = 'item 2'
+// ulElement.appendChild(liSecond)
+
+// document.getElementsByTagName('body')[0].appendChild(ulElement)
+
+/**
+ * Ejercicio 1
+ * <ul id="menu" class="menu">
+        <li class="item__menu">Home</li>
+        <li class="item__menu">Products</li>
+        <li class="item__menu">About Us</li>
+    </ul>
+    Replicar con JS este markup
+ */
 
 
-/*
-	Pedir al usuario una palabra
-	Devolver la palabra capitalizada
-	p.ej. 'galAxiA'
-	Ouput -> 'Galaxia'
-*/
-const wordUser = prompt('Dame una oración').trim().toLowerCase()
-var wordCap = wordUser.substring(0,1).toUpperCase() + wordUser.substring(1)
-console.log(wordCap)
-
-/*
-	Pedir al usuario una oración (permitir espacios)
-	Capitalizar cada una de las palabras de la oración
-	p.ej. 'En una galaxia muy muy lejana'
-	Ouput -> 'En Una Galaxia Muy Muy Lejana'
-*/
-
-
-const word = prompt('Dame una oración').trim().toLowerCase()
-let wordCapitalize = ''
-// en una galaxia
-for(i = 0; i < word.length; i++){
-    if(word[i] == ' '){
-        wordCapitalize += ' ' + word[i + 1].toUpperCase()
-        i = i + 1
-    } else {
-        wordCapitalize = wordCapitalize + word[i]
-    }
-}
-// en Una Galaxia
-wordCapitalize = wordCapitalize.substring(0,1).toUpperCase() + wordCapitalize.substring(1)
-// En Una Galaxia
-console.log(wordCapitalize)
-
-
-
-/*
-	Pedir al usuario cuantas materias tiene actualmente
-	Pedir al usuario la calificacion de cada una de esas N materias
-	Arrojar el promedio en un alert
-*/
-
-let totalSubjects = parseInt( prompt('Total de materias') )
-let total = 0, average = 0, counter = 1;
-
-while(counter <= totalSubjects){
-    total = total + parseInt(prompt(`Calificación de la materia ${counter}: `))
-    counter++
-}
-
-average = total / totalSubjects
-alert(`El promedio es: ${average}`)
-
+    let ulMenu = document.createElement('ul')
+    ulMenu.classList.add('menu')
+    ulMenu.setAttribute('id','menu')
+    
+    let liMenuHome = document.createElement('li')
+    liMenuHome.classList.add('item__menu')
+    liMenuHome.textContent = 'Home'
+    ulMenu.appendChild(liMenuHome)
+    
+    let liMenuProducts = document.createElement('li')
+    liMenuProducts.classList.add('item__menu')
+    liMenuProducts.textContent = 'Products'
+    ulMenu.appendChild(liMenuProducts)
+    
+    let liMenuAboutUs = document.createElement('li')
+    liMenuAboutUs.classList.add('item__menu')
+    liMenuAboutUs.textContent = 'About Us'
+    ulMenu.appendChild(liMenuAboutUs)
+    
+    document.getElementsByTagName('body')[0].appendChild(ulMenu)
